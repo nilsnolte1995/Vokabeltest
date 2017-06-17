@@ -1,0 +1,57 @@
+.wordbox {
+    height: 200px;
+   /* width: 400px;*/
+    background-color: #1dbff9;
+    border-radius:  10px;
+    text-align: center;
+    position: relative;
+}
+
+
+.wordbox span {
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    font-family: Calibri, sans serfi;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 0;
+    right: 0;
+}
+
+.red {
+    background-color: red; 
+    font-size: 40px;
+}
+
+.green {
+    background-color: green;
+    font-size: 40px;
+}
+ 
+
+.durchgestrichen {
+    font-size: 30px;
+    text-decoration: line-through;
+}
+
+.antwort-box {
+    height: 400px;
+    width: 600px;
+    //background-color: #1dbff9;
+    border-radius:  20px;
+    text-align: center;
+    position: relative;
+    margin:0 auto;
+}
+
+
+@media all (max-width: 900px) {
+    .wordbox {
+       height: 120px; 
+        width: 60%;
+    }
+    
+    
+}

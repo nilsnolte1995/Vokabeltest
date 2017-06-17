@@ -1,0 +1,1 @@
+понедельник;Montag;вторник;Dienstag;среда;Mittwoch;четверг;Donnerstag;пятница;Freitag;суббота;Samstag;воскресенье;Sonntag
