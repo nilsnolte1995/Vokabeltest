@@ -61,6 +61,7 @@
                          <p>{$vokabel2 }</p>
                     </div>";
                 }
+                 write_file(basename($lektion,".txt"),$richtige_antworten.";".$gesamt_antworten);
             }
             else {
                   echo "
@@ -70,7 +71,7 @@
                     </div>";
             }
             
-            write_file(basename($lektion,".txt"),$richtige_antworten.";".$gesamt_antworten);
+           
             ?>
             
             

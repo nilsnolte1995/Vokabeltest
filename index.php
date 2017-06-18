@@ -23,10 +23,13 @@
             $vokabellisten =  array_slice($vokabellisten, 2);
             foreach($vokabellisten as $liste) 
             {
+                
                 $file_name = basename($liste,".txt");
+                if($file_name != ".DS_Store"){
                 echo "<a href='fragen.php?liste={$liste}'data-role='button' data-icon='arrow-r' data-iconpos='right'>".$file_name."</a>";
                 if (!file_exists("./statistik/".$file_name ."_statistik.txt")) { //legt für eine neue Lektion eien Stat Datei an
                     write_file($file_name,"0;0");
+                }
             }
             }
 
