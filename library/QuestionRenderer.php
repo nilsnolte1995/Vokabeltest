@@ -77,31 +77,29 @@ class QuestionRenderer
                 </div>
             </div>
             <div class="ui-block-b">
-                <div class="ui-content">
-                    <div data-role="main" class="ui-content">
-                        <form method="post" action="antwort.php?lektion=<?php echo $fileName ?>">
-                            <fieldset data-role="controlgroup">
-                                <?php
-                                for ($i = 0; $i < 5; $i++) {
-
-                                    $currentInputId = "radio-choice-v-" . $i;
-                                    ?>
-
-                                    <input type='radio' name='antwort_klickt' id='<?php echo $currentInputId; ?>'
-                                           value="<?php echo $ausgabe[$i]; ?>"><label
-                                        for='<?php echo $currentInputId; ?>'><?php echo $ausgabe[$i]; ?></label>
-
-                                    <?php
-                                }
-                                ?>
-                            </fieldset>
+                <div class="ui-content" data-role="main">
+                    <form method="post" action="antwort.php?lektion=<?php echo $fileName ?>">
+                        <fieldset data-role="controlgroup" style="margin-top: 0;">
                             <?php
-                            echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel1' value='{$vokabel1}'>";
-                            echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel2' value='{$vokabel2}'>";
+                            for ($i = 0; $i < 5; $i++) {
+
+                                $currentInputId = "radio-choice-v-" . $i;
+                                ?>
+
+                                <input type='radio' name='antwort_klickt' id='<?php echo $currentInputId; ?>'
+                                       value="<?php echo $ausgabe[$i]; ?>"><label
+                                    for='<?php echo $currentInputId; ?>'><?php echo $ausgabe[$i]; ?></label>
+
+                                <?php
+                            }
                             ?>
-                            <center><input type="submit" data-inline="true" value="Submit"></center>
-                        </form>
-                    </div>
+                        </fieldset>
+                        <?php
+                        echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel1' value='{$vokabel1}'>";
+                        echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel2' value='{$vokabel2}'>";
+                        ?>
+                        <center><input type="submit" data-inline="true" value="Submit"></center>
+                    </form>
                 </div>
             </div>
             <?php

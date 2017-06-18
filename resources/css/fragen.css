@@ -46,19 +46,9 @@ div.indicator
 .antwort-box {
     height: 400px;
     width: 600px;
-    //background-color: #1dbff9;
+    background-color: #1dbff9;
     border-radius:  20px;
     text-align: center;
     position: relative;
     margin:0 auto;
-}
-
-
-@media all (max-width: 900px) {
-    .wordbox {
-       height: 120px; 
-        width: 60%;
-    }
-    
-    
 }
