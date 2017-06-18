@@ -27,12 +27,12 @@ div.indicator
     right: 0;
 }
 
-.red {
+.antwort-box.red {
     background-color: red; 
     font-size: 40px;
 }
 
-.green {
+.antwort-box.green {
     background-color: green;
     font-size: 40px;
 }
