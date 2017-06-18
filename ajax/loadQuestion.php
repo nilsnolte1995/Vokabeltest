@@ -1,27 +1,22 @@
 <?php
+session_start();
+
+include "../library/SessionUtilities.php";
 include "../library/QuestionRenderer.php";
 
 $fileName = $_POST["liste"];
-$cookieName = QuestionRenderer::getCookieName($fileName);
-
-if(!isset($_COOKIE[$cookieName]))
-{
-    die();
-}
-
-
 $switchLanguage = isset($_POST['switchLanguage']);
+
+$sessionName = SessionUtilities::getSessionName($fileName);
 
 if($switchLanguage)
 {
-    if($_COOKIE[$cookieName] == "1")
+    if($_SESSION[$sessionName] == 1)
     {
-        setcookie($cookieName, "2");
+        $_SESSION[$sessionName] = 2;
     }else{
-        setcookie($cookieName, "1");
+        $_SESSION[$sessionName] = 1;
     }
 }
-
-//echo $_COOKIE[$cookieName];
 
 QuestionRenderer::renderQuestion("../", $fileName);

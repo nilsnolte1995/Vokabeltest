@@ -2,13 +2,9 @@
 
 class QuestionRenderer
 {
-    public static function getCookieName($fileName)
-    {
-        return "language-".str_replace("." ,"_" , $fileName);
-    }
     public static function renderQuestion($rootPath, $fileName)
     {
-        $language = $_COOKIE[self::getCookieName($fileName)];
+        $language = $_SESSION[SessionUtilities::getSessionName($fileName)];
         
         if (($handle = @fopen($rootPath."uploads/" . $fileName, "r")) != FALSE) {
             while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
@@ -20,7 +16,7 @@ class QuestionRenderer
             fclose($handle);
 
 
-            if($language == "1"){
+            if($language == 1){
                 for ($i = 0; $i < sizeof($inhalt); $i++) {
                     $sprache1[] = $inhalt[$i++];
                     $sprache2[] = $inhalt[$i];
@@ -102,7 +98,6 @@ class QuestionRenderer
                             <?php
                             echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel1' value='{$vokabel1}'>";
                             echo "<input style='display: none; visibility: hidden;' type='text' name='vokabel2' value='{$vokabel2}'>";
-                            echo "<input id='sprachAuswahl' style='display: none; visibility: hidden;' type='text' name='richtung' value='$language'>";
                             ?>
                             <center><input type="submit" data-inline="true" value="Submit"></center>
                         </form>

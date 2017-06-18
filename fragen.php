@@ -1,15 +1,12 @@
 <?php
+session_start();
+
 include "library/QuestionRenderer.php";
+include "library/SessionUtilities.php";
 //header("Cache-Control: post-check=0, pre-check=0", FALSE);
 $fileName = $_GET["liste"];
 
-$cookieName = QuestionRenderer::getCookieName($fileName);
-
-if(!isset($_COOKIE[$cookieName]))
-{
-    setcookie($cookieName, "1", time() + (86400 * 30), "/"); // 86400 = 1
-}
-
+SessionUtilities::setSessionIfNeeded($fileName);
 ?>
 
 
